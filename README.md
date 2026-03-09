@@ -9,6 +9,8 @@ A lightweight Playwright test automation framework scaffolded for training and e
 This repository provides a basic Playwright setup with:
 - Playwright test runner (`@playwright/test`)
 - Allure reporting via `allure-playwright`
+- Page Object Model (POM) structure under `src/pages/`
+- Shared test data module under `src/utils/testData.js`
 - Example end-to-end test verifying that Playwright can load a sample site
 
 ## ✅ Prerequisites
@@ -92,10 +94,14 @@ npx serve --single allure-report
 ├── playwright.config.js         # Playwright configuration (reporters, timeouts, etc.)
 ├── src/
 │   ├── fixtures/              # Test fixtures (custom test setups)
-│   ├── pages/                 # Page objects / UI abstractions
-│   └── tests/
-│       └── e2e/               # End-to-end tests
-│           └── sanity.spec.js # Example sanity test
+│   ├── pages/                 # Page objects / UI abstractions (POM)
+│   ├── tests/
+│   │   └── e2e/               # End-to-end tests
+│   │       ├── sanity.spec.js # Example sanity test
+│   │       ├── login.spec.js  # Login-related test cases
+│   │       └── order.spec.js  # End-to-end ordering flow
+│   └── utils/                # Shared utilities (test data, helpers)
+│       └── testData.js       # Shared test data and expected values
 ├── allure-results/            # Allure raw results (generated)
 ├── allure-report/             # Generated Allure report (HTML output)
 └── playwright-report/         # Generated Playwright HTML report
