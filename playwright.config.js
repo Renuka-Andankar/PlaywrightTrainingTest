@@ -12,13 +12,13 @@ module.exports = defineConfig({
   // ✅ Enable ALL reports together
   reporter: [
     ['list'],                      // Console report
-    ['html', { open: 'never' }],   // Playwright HTML report
+    ['html', { open: 'never' }],
     ["line"],
      ['allure-playwright', {
       detail: true,
       outputFolder: 'allure-results',
       suiteTitle: false
-    }]         // Allure report
+    }]
   ],
 
   use: {
