@@ -5,3 +5,5 @@ reports/
 .vscode/
 test-results/
 *.log
+allure-report
+allure-results
