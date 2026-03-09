@@ -5,6 +5,8 @@ module.exports = {
   INVALID_USER: 'bad_user',
   INVALID_PASS: 'bad_pass',
 
+  userInfo: { FirstName: 'Renuka', LastName: 'Andankar', PostalCode: '12345' },
+
   // Expected messages
   LOGIN_ERROR_MESSAGE:
     'Epic sadface: Username and password do not match any user in this service',

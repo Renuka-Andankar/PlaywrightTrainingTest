@@ -3,7 +3,7 @@ const { LoginPage } = require('../../pages/login.page');
 const { InventoryPage } = require('../../pages/inventory.page');
 const { CartPage } = require('../../pages/cart.page');
 const { CheckoutPage } = require('../../pages/checkout.page');
-const { VALID_USER, VALID_PASS, ORDER_SUCCESS_HEADER } = require('../../utils/testData');
+const { VALID_USER, VALID_PASS, ORDER_SUCCESS_HEADER, userInfo } = require('../../utils/testData');
 
 async function login(page) {
   const login = new LoginPage(page);
@@ -20,7 +20,6 @@ test.describe('Sauce Demo - Ordering Flow', () => {
     const cart = new CartPage(page);
     const checkout = new CheckoutPage(page);
 
-    // Add a couple of items to cart
     await inventory.addItemToCart('sauce-labs-backpack');
     await inventory.addItemToCart('sauce-labs-bike-light');
 
@@ -35,9 +34,9 @@ test.describe('Sauce Demo - Ordering Flow', () => {
 
     // Fill in checkout information
     await checkout.fillInformation({
-      firstName: 'Renuka',
-      lastName: 'Andankar',
-      postalCode: '12345',
+      firstName: userInfo.FirstName,
+      lastName: userInfo.LastName,
+      postalCode: userInfo.PostalCode,
     });
     await checkout.continue();
 
